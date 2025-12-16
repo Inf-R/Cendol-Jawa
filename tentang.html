@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Kami - Cendol Jawa</title>
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <h1 class="logo">Cendol Jawa</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html" class="active">Tentang Kami</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- TENTANG -->
+  <section class="container" style="padding-top: 100px;">
+    <h2>Tentang Kami</h2>
+    <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <p style="font-size: 1.2em; line-height: 1.8; color: #555; margin-bottom: 20px;">
+        Cendol Jawa berdiri sejak 2020 dengan komitmen menghadirkan minuman tradisional yang sehat, higienis, dan lezat. Kami bangga menjaga resep turun temurun yang autentik sambil memastikan standar kebersihan modern.
+      </p>
+      <p style="font-size: 1.1em; line-height: 1.8; color: #555; margin-bottom: 20px;">
+        Setiap gelas cendol kami dibuat dengan bahan-bahan pilihan: santan segar, gula merah asli dari Jawa Tengah, dan cendol yang dibuat sendiri tanpa pewarna buatan. Kami percaya bahwa kualitas bahan menentukan kenikmatan rasa.
+      </p>
+      <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+        Visi kami adalah menjadi brand minuman tradisional terdepan yang melestarikan warisan kuliner Indonesia sambil beradaptasi dengan selera modern. Terima kasih telah mempercayai Cendol Jawa sebagai pilihan minuman segar Anda!
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section class="container">
+    <h2>Testimoni Pelanggan</h2>
+    <div id="testimoniList" class="produk-grid"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Cendol Jawa. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Testimoni Pelanggan
+    const testimoni = [
+      { nama: "Budi Santoso", pesan: "Cendolnya segar banget, rasanya khas Jawa! Sudah langganan sejak buka.", rating: "⭐⭐⭐⭐⭐" },
+      { nama: "Sari Indah", pesan: "Manisnya pas, cocok diminum siang hari! Pelayanan ramah sekali.", rating: "⭐⭐⭐⭐⭐" },
+      { nama: "Andi Wijaya", pesan: "Cendol duriannya juara! Worth it untuk harganya.", rating: "⭐⭐⭐⭐" },
+      { nama: "Lina Marlina", pesan: "Harga terjangkau dan kualitas top! Anak-anak suka banget.", rating: "⭐⭐⭐⭐⭐" },
+      { nama: "Rafi Ahmad", pesan: "Pelayannya cepat, rasanya mantap! Bakal balik lagi.", rating: "⭐⭐⭐⭐" },
+      { nama: "Dewi Cantika", pesan: "Tempatnya nyaman, cendolnya autentik banget. Recommended!", rating: "⭐⭐⭐⭐⭐" }
+    ];
+
+    const testimoniContainer = document.getElementById('testimoniList');
+    testimoni.forEach(item => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+        <div style="text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+            <h3 style="color: #2e7d32; margin: 0;">${item.nama}</h3>
+            <span style="color: #ffcc00; font-size: 1.1em;">${item.rating}</span>
+          </div>
+          <p style="font-style: italic; color: #666; margin: 0;">"${item.pesan}"</p>
+        </div>
+      `;
+      testimoniContainer.appendChild(card);
+    });
+  </script>
+</body>
+</html>

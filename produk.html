@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produk - Cendol Jawa</title>
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <h1 class="logo">Cendol Jawa</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="produk.html" class="active">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUK -->
+  <section class="container" style="padding-top: 100px;">
+    <h2>Menu Kami</h2>
+    <div class="produk-grid">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/a7/d5/99/a7d599ac93820a46eecefbd34713e850.jpg" alt="Cendol Original">
+        <h3>Cendol Original</h3>
+        <p>Cendol klasik dengan santan segar dan gula merah asli</p>
+        <p style="font-size: 1.3em; font-weight: bold; color: #2e7d32;">Rp 10.000</p>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/33/c6/3d/33c63db30d1f536519251c4510117472.jpg" alt="Cendol Susu">
+        <h3>Cendol Susu</h3>
+        <p>Perpaduan sempurna cendol dengan susu segar premium</p>
+        <p style="font-size: 1.3em; font-weight: bold; color: #2e7d32;">Rp 12.000</p>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/6a/39/d8/6a39d8bd4a7d2ed6baedac2133da0094.jpg" alt="Cendol Durian">
+        <h3>Cendol Durian</h3>
+        <p>Sensasi unik cendol dengan topping durian montong pilihan</p>
+        <p style="font-size: 1.3em; font-weight: bold; color: #2e7d32;">Rp 25.000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HITUNG TOTAL BELANJA -->
+  <section class="container">
+    <h2>Hitung Total Belanja</h2>
+    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto;">
+      <form id="formBelanja">
+        <div style="margin-bottom: 20px;">
+          <label for="harga" style="display: block; font-weight: 600; color: #2e7d32; margin-bottom: 8px;">Harga (Rp):</label>
+          <input type="number" id="harga" placeholder="Contoh: 12000" required min="1" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px;">
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+          <label for="jumlah" style="display: block; font-weight: 600; color: #2e7d32; margin-bottom: 8px;">Jumlah:</label>
+          <input type="number" id="jumlah" placeholder="Contoh: 3" required min="1" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px;">
+        </div>
+        
+        <button type="submit" class="btn" style="width: 100%; justify-content: center;">Hitung Total</button>
+      </form>
+      <div id="hasilTotal" style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; text-align: center; display: none;">
+        <h3 style="color: #2e7d32; margin: 0;">Total Belanja</h3>
+        <p id="totalAmount" style="font-size: 1.5em; font-weight: bold; color: #2e7d32; margin: 10px 0 0 0;"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEK KATEGORI USIA -->
+  <section class="container">
+    <h2>Cek Kategori Usia</h2>
+    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <label for="usia" style="display: block; font-weight: 600; color: #2e7d32; margin-bottom: 10px;">Masukkan Usia Anda:</label>
+      <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <input type="number" id="usia" placeholder="Contoh: 25" style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px;">
+        <button id="cekUsia" class="btn">Cek Kategori</button>
+      </div>
+      <p id="hasilUsia" style="margin-top: 15px; font-weight: 600; padding: 10px; border-radius: 5px;"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Cendol Jawa. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="produk.js"></script>
+</body>
+</html>

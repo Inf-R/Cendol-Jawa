@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - Cendol Jawa</title>
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <h1 class="logo">Cendol Jawa</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html" class="active">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- KONTAK -->
+  <section class="container" style="padding-top: 100px;">
+    <h2>Hubungi Kami</h2>
+    
+    <!-- Feedback Message -->
+    <div id="feedbackMessage" class="feedback-message"></div>
+    
+    <form id="formKontak" class="contact-form">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="contoh@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="nomorhp">Nomor HP:</label>
+        <input type="tel" id="nomorhp" name="nomorhp" required placeholder="08xxxxxxxxxx" pattern="[0-9]+" title="Hanya angka yang diperbolehkan">
+        <small class="form-hint">Hanya angka, tanpa spasi atau karakter lain</small>
+      </div>
+
+      <div class="form-group">
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-submit">
+          <span></span> Kirim Pesan
+        </button>
+        <button type="button" id="clearBtn" class="btn btn-clear">
+          <span></span> Clear Data
+        </button>
+      </div>
+    </form>
+  </section>
+  
+  <!-- WEBINAR REGISTRATION -->
+  <section class="container">
+    <h2>Daftar Webinar Promosi Produk</h2>
+    <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 30px;">
+      Dapatkan tips dan trik bisnis cendol dari ahli secara GRATIS!
+    </p>
+    
+    <!-- Feedback Message -->
+    <div id="webinarFeedback" class="feedback-message"></div>
+    
+    <form id="formWebinar" class="contact-form">
+      <!-- Nama Lengkap -->
+      <div class="form-group">
+        <label for="namaWebinar">Nama Lengkap: <span class="required">*</span></label>
+        <input type="text" id="namaWebinar" name="namaWebinar" required 
+               placeholder="Masukkan nama lengkap (minimal 3 karakter)"
+               minlength="3">
+        <small class="error-message" id="errorNama"></small>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="emailWebinar">Email: <span class="required">*</span></label>
+        <input type="email" id="emailWebinar" name="emailWebinar" required 
+               placeholder="contoh@gmail.com">
+        <small class="error-message" id="errorEmail"></small>
+        <small class="form-hint">Email Yahoo tidak diperbolehkan</small>
+      </div>
+
+      <!-- No HP -->
+      <div class="form-group">
+        <label for="hpWebinar">Nomor HP: <span class="required">*</span></label>
+        <input type="tel" id="hpWebinar" name="hpWebinar" required 
+               placeholder="08xxxxxxxxxx" pattern="[0-9]+">
+        <small class="error-message" id="errorHP"></small>
+        <small class="form-hint">Hanya angka, tanpa spasi atau karakter lain</small>
+      </div>
+
+      <!-- Pilihan Topik -->
+      <div class="form-group">
+        <label for="topikWebinar">Pilihan Topik Webinar: <span class="required">*</span></label>
+        <select id="topikWebinar" name="topikWebinar" required>
+          <option value="">-- Pilih Topik Webinar --</option>
+          <option value="strategi">Strategi Pemasaran Cendol di Era Digital</option>
+          <option value="resep">Rahasia Resep Cendol Autentik Jawa</option>
+          <option value="bisnis">Modal dan Analisis Bisnis Minuman Tradisional</option>
+          <option value="inovasi">Inovasi Varian Cendol Kekinian</option>
+        </select>
+        <small class="error-message" id="errorTopik"></small>
+      </div>
+
+      <!-- Checkbox Persetujuan -->
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="persetujuan" name="persetujuan" required>
+          <span class="checkmark"></span>
+          Saya menyetujui syarat & ketentuan yang berlaku
+        </label>
+        <small class="error-message" id="errorPersetujuan"></small>
+      </div>
+
+      <!-- Form Buttons -->
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-submit">
+          <span></span> Daftar Webinar
+        </button>
+        <button type="button" id="resetWebinar" class="btn btn-clear">
+          <span></span> Reset Form
+        </button>
+      </div>
+    </form>
+
+    <!-- Preview Data Pendaftaran -->
+    <div id="previewData" class="preview-container" style="display: none;">
+      <h3>Preview Data Pendaftaran:</h3>
+      <div class="preview-card">
+        <p><strong>Nama:</strong> <span id="previewNama"></span></p>
+        <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+        <p><strong>No HP:</strong> <span id="previewHP"></span></p>
+        <p><strong>Topik:</strong> <span id="previewTopik"></span></p>
+        <p><strong>Status:</strong> <span class="status-pending">Menunggu Konfirmasi</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Cendol Jawa. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="kontak.js"></script>
+</body>
+</html>
